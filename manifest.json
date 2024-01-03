@@ -1,0 +1,17 @@
+{
+  "name": "Converter Temperaturas Celsius, Kelvin, e Fahrenheit",
+  "description": "Simples aplicativo com PWA e Service Worker que converte temperaturas de e para Celsius, Kelvin, e Fahrenheit",
+  "short_name": "Converter Temperaturas",
+  "start_url": "/",
+  "lang": "pt-BR",
+  "theme_color": "#333333",
+  "display": "standalone",
+  "background_color": "#333333",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icon-temperature512.png",
+      "sizes": "512x512"
+    }
+  ]
+}

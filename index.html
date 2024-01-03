@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Converter Temperaturas</title>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <ul>
+                <li onclick="openPageHome();">Início</li>
+                <li onclick="openPageAbout();">Sobre</li>
+                <li onclick="openPageBlog();">Blog</li>
+            </ul>
+        </nav>
+    </main>
+
+    <h1>Converter Temperaturas</h1>
+
+    <form id="converter">
+        <label for="input-temp">Temperatura</label>
+        <input type="text" id="input-temp" name="input-temp" value="20">
+        <label for="input-unit">de</label>
+        <select id="input-unit" name="input-unit">
+            <option value="c" selected>Celsius</option>
+            <option value="f">Fahrenheit</option>
+            <option value="k">Kelvin</option>
+        </select>
+        <label for="output-unit">para</label>
+        <select id="output-unit" name="output-unit">
+            <option value="c">Celsius</option>
+            <option value="f" selected>Fahrenheit</option>
+            <option value="k">Kelvin</option>
+        </select>
+        <output name="output-temp" id="output-temp" for="input-temp input-unit output-unit">68 F</output>
+    </form>
+
+    <script src="js_converter.js"></script>
+    <script src="js_openpages.js"></script>
+
+    <!--Registrar Service Worker-->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/js_sw.js', { scope: '/' });
+        }
+    </script>
+</body>
+
+</html>
