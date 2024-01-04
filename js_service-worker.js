@@ -1,4 +1,4 @@
-const CACHE_NAME = `converter-temperatura-v1`;
+var CACHE_NAME = `converter-temperatura-v1`;
 
 //Use o evento de instalação para pré-armazenar em cache todos os recursos iniciais.
 self.addEventListener('install', event => {
@@ -7,11 +7,11 @@ self.addEventListener('install', event => {
         cache.addAll([
             '/',
             '/js_converter.js',
-            '/js_openpages.js',
+            '/js_open-pages.js',
             '/style_converter.css',
             '/style_about.css',
             '/style_blog.css'
-            
+
         ]);
     })());
 });
@@ -24,7 +24,7 @@ self.addEventListener('fetch', event => {
         const cachedResponse = await cache.match(event.request);
         if (cachedResponse) {
             return cachedResponse;
-        }else {
+        } else {
             try {
                 //Se o recurso não estiver no cache, tente a rede.
                 const fetchResponse = await fetch(event.request);
@@ -32,8 +32,8 @@ self.addEventListener('fetch', event => {
                 //Salve o recurso no cache e devolva-o.
                 cache.put(event.request, fetchResponse.clone());
                 return fetchResponse;
-            }catch (e) {
-            //A rede falhou.
+            } catch (e) {
+                //A rede falhou.
             }
         }
     })());
